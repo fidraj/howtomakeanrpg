@@ -58,6 +58,9 @@ Teleport(gHero.mEntity, gMap)
 
 function update()
     local dt = GetDeltaTime()
+    local playerPos = gHero.mEntity.mSprite:GetPosition()
+    gMap.mCamX = math.floor(playerPos:X())
+    gMap.mCamY = math.floor(playerPos:Y())
 
     gRenderer:Translate(-gMap.mCamX, -gMap.mCamY)
     gMap:Render(gRenderer)
